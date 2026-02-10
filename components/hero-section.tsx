@@ -109,7 +109,7 @@ export function HeroSection() {
               />
               <img
                 src="/Media/Babu Venkat (No BG).png"
-                alt="Babu Vekant, candidate for Frisco ISD Board of Trustees"
+                alt="Babu Venkat, candidate for Frisco ISD Board of Trustees"
                 className="relative z-10 h-auto w-full"
                 width={420}
                 height={525}

@@ -37,9 +37,9 @@ const canela = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Strong Schools. Bright Futures. | Babu Vekant for Frisco ISD",
+  title: "Strong Schools. Bright Futures. | Babu Venkat for Frisco ISD",
   description:
-    "Babu Vekant is running for Frisco ISD Board of Trustees to put students first, support teachers, partner with parents, and responsibly steward our schools. Learn more and get involved.",
+    "Babu Venkat is running for Frisco ISD Board of Trustees to put students first, support teachers, partner with parents, and responsibly steward our schools. Learn more and get involved.",
   icons: {
     icon: "/Media/Favicon.svg",
   },
@@ -50,13 +50,13 @@ export const metadata: Metadata = {
     "Frisco Texas",
     "education",
     "students first",
-    "Babu Vekant",
+    "Babu Venkat",
     "Babu for FISD",
   ],
   openGraph: {
-    title: "Strong Schools. Bright Futures. | Babu Vekant for Frisco ISD",
+    title: "Strong Schools. Bright Futures. | Babu Venkat for Frisco ISD",
     description:
-      "Babu Vekant is running for Frisco ISD Board of Trustees to put students first, support teachers, and partner with parents.",
+      "Babu Venkat is running for Frisco ISD Board of Trustees to put students first, support teachers, and partner with parents.",
     type: "website",
   },
 };

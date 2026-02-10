@@ -24,7 +24,7 @@ export function AboutSection() {
               <div className="aspect-[4/5] w-[clamp(18rem,50vw,24rem)] overflow-hidden rounded-lg shadow-xl">
                 <img
                   src="/Media/placeholder.svg?height=480&width=380"
-                  alt="Babu Vekant with his family in Frisco"
+                  alt="Babu Venkat with his family in Frisco"
                   className="h-full w-full object-cover"
                   width={380}
                   height={480}

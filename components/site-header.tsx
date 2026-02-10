@@ -33,10 +33,10 @@ export function SiteHeader() {
         <a
           href="#"
           className="flex items-center gap-3 text-primary-foreground"
-          aria-label="Babu Vekant for Frisco ISD -- return to top"
+          aria-label="Babu Venkat for Frisco ISD -- return to top"
         >
           <span className="text-fluid-xl font-bold tracking-tight">
-            BABU<span className="ml-1 font-light opacity-70">VEKANT</span>
+            BABU<span className="ml-1 font-light opacity-70">VENKAT</span>
           </span>
         </a>
 

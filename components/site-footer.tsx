@@ -13,7 +13,7 @@ export function SiteFooter() {
             {/* Brand */}
             <div>
               <p className="mb-2 text-fluid-lg font-bold text-white">
-                BABU<span className="ml-1 font-light text-white/50">VEKANT</span>
+                BABU<span className="ml-1 font-light text-white/50">VENKAT</span>
               </p>
               <p className="text-fluid-sm text-white/60">
                 Candidate for Frisco ISD Board of Trustees
