@@ -30,10 +30,10 @@ export function HeroSection() {
       {/* Bottom nav bar — desktop only */}
       <div className="absolute inset-x-0 bottom-0 z-20 hidden border-t border-primary-foreground/10 bg-primary/80 backdrop-blur lg:block">
         <div className="mx-auto flex max-w-6xl items-center justify-center gap-fluid-8 px-fluid-6 py-4">
-          {["About Babu", "On the Issues", "Get Involved"].map((item) => (
+          {["About Me", "On the Issues", "Get Involved"].map((item) => (
             <a
               key={item}
-              href={`#${item === "About Babu" ? "about" : item === "On the Issues" ? "priorities" : "get-involved"}`}
+              href={`#${item === "About Me" ? "about" : item === "On the Issues" ? "priorities" : "get-involved"}`}
               className="text-fluid-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/60 transition-colors hover:text-primary-foreground"
             >
               {item}
@@ -68,8 +68,8 @@ export function HeroSection() {
                 loaded ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               }`}
             >
-              A Frisco ISD parent and community leader running to keep every
-              student at the center of every decision.
+              A Frisco ISD parent and community leader working to keep every
+              student at the heart of every decision.
             </p>
             <div
               className={`flex flex-col gap-3 transition-all delay-500 duration-700 sm:flex-row ${

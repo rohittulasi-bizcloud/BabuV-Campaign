@@ -44,7 +44,7 @@ export function AboutSection() {
             }`}
           >
             <p className="mb-3 text-fluid-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              About Babu
+              About Me
             </p>
             <h2
               id="about-heading"
@@ -52,9 +52,9 @@ export function AboutSection() {
             >
               A Frisco parent. 
               <br />
-              An executive leader.
-              <br />
               A servant leader.
+              <br />
+              An executive leader.
             </h2>
 
             <div className="mt-1 space-y-fluid-6 text-fluid-base leading-relaxed text-muted-foreground">
@@ -64,8 +64,8 @@ export function AboutSection() {
               </p>
               <p>
                 <span className="font-semibold text-foreground">With deep roots in the Frisco ISD community,</span> my
-                family has been part of Frisco ISD for over 15 years. Our son is a graduate, and our daughter is
-                currently a sophomore.
+                family has been part of Frisco ISD for over 15 years. Our son is a former FISD graduate, and our daughter is
+                currently a FISD sophomore.
               </p>
               <p>
                 <span className="font-semibold text-foreground">Bringing leadership grounded in accountability and service,</span> my
@@ -73,7 +73,7 @@ export function AboutSection() {
                 long-term responsibility.
               </p>
               <p>
-                <span className="font-semibold text-foreground">I am running to help ensure</span> Frisco ISD remains
+                <span className="font-semibold text-foreground">I am stepping forward to help ensure</span> Frisco ISD stays
                 safe, academically strong, future-ready, and fiscally responsible for every student and every family.
               </p>
             </div>

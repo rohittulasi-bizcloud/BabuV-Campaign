@@ -39,7 +39,7 @@ export function TrustSection() {
             id="trust-heading"
             className="mb-fluid-4 font-accent text-fluid-3xl-sm font-bold tracking-tight text-primary-foreground text-balance"
           >
-            Built on listening, not politics
+            Built on listening, collaboration, and respect
           </h2>
           <p className="text-fluid-base leading-relaxed text-primary-foreground/70">
             Trust is earned by showing up, listening, and doing the work consistently and transparently.
