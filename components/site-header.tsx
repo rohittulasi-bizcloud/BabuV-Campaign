@@ -20,6 +20,17 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleDonate = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    const donorboxButton = document.querySelector("dbox-widget button") as HTMLButtonElement | null;
+    if (donorboxButton) {
+      donorboxButton.click();
+    } else {
+      window.open("https://donorbox.org/babu-venkat-for-fisd", "_blank");
+    }
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
@@ -51,8 +62,8 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
-          <Button asChild size="sm" className="ml-3 bg-accent text-accent-foreground hover:bg-accent/90">
-            <a href="#donate">Donate</a>
+          <Button size="sm" className="ml-3 bg-accent text-accent-foreground hover:bg-accent/90" onClick={handleDonate}>
+            Donate
           </Button>
         </nav>
 
@@ -91,13 +102,12 @@ export function SiteHeader() {
               </li>
             ))}
             <li className="mt-2">
-              <a
-                href="#donate"
-                onClick={() => setMobileOpen(false)}
-                className="block rounded-md bg-accent px-3 py-3 text-center text-fluid-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90"
+              <button
+                onClick={handleDonate}
+                className="block w-full rounded-md bg-accent px-3 py-3 text-center text-fluid-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90"
               >
                 Donate
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
