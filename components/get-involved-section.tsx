@@ -4,14 +4,43 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { HandHelping, Check } from "lucide-react";
+import { HandHelping, Check, Loader2 } from "lucide-react";
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll";
 import { AddressAutocomplete } from "@/components/address-autocomplete";
 
+const GOOGLE_SHEET_URL =
+  "https://script.google.com/macros/s/AKfycbzUTefanekLaMKq9lez6oQNP3XhsRDKHJ500clggmu_8j8PTDMkvh60qodFeuzEJkiD/exec";
+
 export function GetInvolvedSection() {
   const [volunteerSubmitted, setVolunteerSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [area, setArea] = useState("");
   const { ref, isVisible } = useAnimateOnScroll<HTMLDivElement>();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem("vol-name") as HTMLInputElement).value;
+    const contact = (form.elements.namedItem("vol-contact") as HTMLInputElement).value;
+
+    try {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, contact, area }),
+      });
+      setVolunteerSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section id="get-involved" aria-labelledby="involved-heading" className="bg-muted/40 py-fluid-24">
@@ -68,7 +97,7 @@ export function GetInvolvedSection() {
             </div>
           ) : (
             <form
-              onSubmit={(e) => { e.preventDefault(); setVolunteerSubmitted(true); }}
+              onSubmit={handleSubmit}
               className="flex flex-col gap-4"
             >
               <div>
@@ -90,9 +119,19 @@ export function GetInvolvedSection() {
                 />
                 <p className="mt-1.5 text-fluid-xs text-muted-foreground/60">This helps us connect you with nearby volunteer opportunities.</p>
               </div>
-              <Button type="submit" className="mt-1 w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                Join the Volunteer Team
+              <Button type="submit" disabled={submitting} className="mt-1 w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                {submitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+                    Submitting...
+                  </>
+                ) : (
+                  "Join the Volunteer Team"
+                )}
               </Button>
+              {error && (
+                <p className="text-fluid-xs text-red-500" role="alert">{error}</p>
+              )}
             </form>
           )}
         </div>
