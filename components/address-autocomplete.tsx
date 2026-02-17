@@ -22,7 +22,7 @@ export function AddressAutocomplete({
   id,
   value,
   onChange,
-  placeholder = "Start typing your address...",
+  placeholder = "Start typing your address, city, or zip code...",
   required = false,
   className = "",
 }: AddressAutocompleteProps) {
@@ -41,7 +41,7 @@ export function AddressAutocomplete({
 
     try {
       const res = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=us&limit=5&addressdetails=1`,
+        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query + ", Texas, US")}&countrycodes=us&limit=6&addressdetails=1`,
         { headers: { "Accept-Language": "en" } }
       );
       const data: AddressResult[] = await res.json();
@@ -59,7 +59,7 @@ export function AddressAutocomplete({
     onChange(val);
 
     if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => fetchSuggestions(val), 300);
+    debounceRef.current = setTimeout(() => fetchSuggestions(val), 350);
   };
 
   const handleSelect = (result: AddressResult) => {
@@ -85,7 +85,6 @@ export function AddressAutocomplete({
     }
   };
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {

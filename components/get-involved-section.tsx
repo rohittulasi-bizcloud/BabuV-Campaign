@@ -16,6 +16,7 @@ export function GetInvolvedSection() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [area, setArea] = useState("");
+  const [nameStarted, setNameStarted] = useState(false);
   const { ref, isVisible } = useAnimateOnScroll<HTMLDivElement>();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -102,7 +103,7 @@ export function GetInvolvedSection() {
             >
               <div>
                 <Label htmlFor="vol-name" className="mb-1.5 block text-fluid-sm font-medium text-foreground">Full Name</Label>
-                <Input id="vol-name" type="text" placeholder="Jane Smith" required autoComplete="name" className="border-border bg-background" />
+                <Input id="vol-name" type="text" placeholder="Jane Smith" required autoComplete="name" className="border-border bg-background" onChange={(e) => setNameStarted(e.target.value.length > 0)} />
               </div>
               <div>
                 <Label htmlFor="vol-contact" className="mb-1.5 block text-fluid-sm font-medium text-foreground">Email or Phone (your choice)</Label>
@@ -115,7 +116,7 @@ export function GetInvolvedSection() {
                   value={area}
                   onChange={setArea}
                   placeholder="Start typing your neighborhood or address..."
-                  required
+                  required={nameStarted}
                 />
                 <p className="mt-1.5 text-fluid-xs text-muted-foreground/60">This helps us connect you with nearby volunteer opportunities.</p>
               </div>
