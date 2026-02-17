@@ -20,14 +20,12 @@ export function AboutSection() {
               isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
             }`}
           >
-            <div className="relative mx-auto w-fit">
-              <div className="aspect-[4/5] w-[clamp(18rem,50vw,24rem)] overflow-hidden rounded-lg shadow-xl">
+            <div className="relative mx-auto w-full">
+              <div className="aspect-[4/5] w-full overflow-hidden rounded-lg shadow-xl transition-transform duration-500 hover:scale-[1.02] hover:shadow-2xl">
                 <img
-                  src="/Media/placeholder.svg?height=480&width=380"
+                  src="/Media/Family Photo.jpg"
                   alt="Babu Venkat with his family in Frisco"
                   className="h-full w-full object-cover"
-                  width={380}
-                  height={480}
                 />
               </div>
               <div

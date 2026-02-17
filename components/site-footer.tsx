@@ -28,11 +28,14 @@ export function SiteFooter() {
                   { label: "About", href: "#about" },
                   { label: "Priorities", href: "#priorities" },
                   { label: "Get Involved", href: "#get-involved" },
-                  { label: "Donate", href: "#donate" },
-                  { label: "Voting Info", href: "#vote" },
+                  { label: "Donate", href: "https://donorbox.org/babu-venkat-for-fisd" },
                 ].map((link) => (
                   <li key={link.href}>
-                    <a href={link.href} className="text-fluid-sm text-white/60 transition-colors hover:text-white">
+                    <a
+                      href={link.href}
+                      className="text-fluid-sm text-white/60 transition-colors hover:text-white"
+                      {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
                       {link.label}
                     </a>
                   </li>

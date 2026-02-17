@@ -2,7 +2,6 @@ import React from "react"
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-import Script from "next/script";
 
 import "./globals.css";
 
@@ -75,19 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${canela.variable}`}>
-      <body className="font-sans antialiased">
-        {children}
-        <Script
-          src="https://donorbox.org/widgets.js"
-          type="module"
-          strategy="afterInteractive"
-        />
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<dbox-widget campaign="babu-venkat-for-fisd" type="popup" button-label="Donate" button-type="regular" button-color="#14213b" button-size="medium" regular-position="left" show-icon=""></dbox-widget>`,
-          }}
-        />
-      </body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
